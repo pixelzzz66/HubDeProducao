@@ -1,1 +1,24 @@
-
+[
+  {
+    "categoria": "Google Workspace",
+    "itens": [
+      { "nome": "Docs",   "url": "https://docs.google.com",   "icone": "📝", "descricao": "Documentos" },
+      { "nome": "Sheets", "url": "https://sheets.google.com", "icone": "📊", "descricao": "Planilhas" },
+      { "nome": "Slides", "url": "https://slides.google.com", "icone": "📽️", "descricao": "Apresentações" },
+      { "nome": "Drive",  "url": "https://drive.google.com",  "icone": "📁", "descricao": "Arquivos" }
+    ]
+  },
+  {
+    "categoria": "Faculdade",
+    "itens": [
+      { "nome": "Drive da Veterana", "url": "https://drive.google.com/drive/folders/1x-Ocriz--AIq4j-V9hJvkM8CheqqibD_?hl=pt-br", "icone": "⭐", "descricao": "Provas antigas e materiais" },
+      { "nome": "Portal do Aluno",   "url": "https://www.dac.unicamp.br/portal/",  "icone": "🎓", "descricao": "DAC/UNICAMP" }
+    ]
+  },
+  {
+    "categoria": "Design",
+    "itens": [
+      { "nome": "Canva", "url": "https://canva.com", "icone": "🎨", "descricao": "Design gráfico" }
+    ]
+  }
+]
