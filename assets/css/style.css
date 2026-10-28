@@ -844,3 +844,214 @@ textarea:focus {
 .fca-pre-label { font-weight: 600; }
 
 .fca-pre-valor { color: var(--texto); }
+
+/* ─── Etapa 8: Repositório, Dashboard e Sobre ─── */
+
+/* --- DASHBOARD (Index) --- */
+.hud-boas-vindas {
+  position: relative;
+  padding: 40px 24px;
+  margin-bottom: 40px;
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hud-linha-topo,
+.hud-linha-base {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--acento), transparent);
+}
+
+.hud-linha-topo { top: 0; }
+.hud-linha-base { bottom: 0; }
+
+.hud-titulo {
+  font-family: ui-monospace, "JetBrains Mono", monospace;
+  font-size: 2.2rem;
+  letter-spacing: 0.15em;
+  color: var(--acento);
+  margin-bottom: 8px;
+  text-shadow: 0 0 20px rgba(76, 201, 240, 0.4);
+}
+
+.hud-subtitulo {
+  font-size: 0.95rem;
+  color: var(--texto-fraco);
+  letter-spacing: 0.05em;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.dash-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: var(--acento);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.dash-card:hover {
+  border-color: var(--acento);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  text-decoration: none;
+}
+
+.dash-card:hover::before { transform: scaleX(1); }
+
+.dash-icone { font-size: 2rem; margin-bottom: 12px; }
+
+.dash-titulo {
+  font-family: ui-monospace, monospace;
+  font-size: 1.05rem;
+  color: var(--texto);
+  margin-bottom: 8px;
+}
+
+.dash-desc {
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  line-height: 1.5;
+}
+
+.hud-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-label { color: var(--texto-fraco); font-size: 0.7rem; letter-spacing: 0.1em; }
+.status-valor { color: var(--texto); }
+.status-valor.ativo { color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.3); }
+
+/* --- REPOSITÓRIO --- */
+.repositorio-lista { display: flex; flex-direction: column; gap: 40px; margin-bottom: 40px; }
+
+.repositorio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.repo-card:hover { border-color: var(--acento); transform: translateY(-2px); text-decoration: none; }
+
+.repo-preview {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--linha);
+  overflow: hidden;
+}
+
+.repo-preview img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 12px; }
+.repo-preview-doc span { font-size: 3rem; opacity: 0.8; }
+
+.repo-info { padding: 12px; display: flex; flex-direction: column; gap: 4px; }
+.repo-nome { font-size: 0.9rem; font-weight: 600; color: var(--texto); }
+.repo-tipo { font-size: 0.75rem; color: var(--texto-fraco); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.repositorio-contribuir {
+  text-align: center;
+  padding: 32px;
+  background: var(--bg-soft);
+  border: 1px dashed var(--linha);
+  border-radius: 8px;
+}
+
+.repositorio-contribuir h3 { color: var(--acento); margin-bottom: 8px; font-family: ui-monospace, monospace; }
+.repositorio-contribuir p { color: var(--texto-fraco); font-size: 0.9rem; margin-bottom: 16px; }
+
+/* --- SOBRE --- */
+.sobre-conteudo { display: flex; justify-content: center; padding: 24px 0; }
+
+.sobre-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+}
+
+.sobre-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--acento), transparent);
+  border-radius: 0 0 12px 12px;
+}
+
+.sobre-avatar {
+  width: 80px; height: 80px;
+  background: var(--bg);
+  border: 2px solid var(--acento);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: ui-monospace, monospace;
+  font-size: 1.5rem; color: var(--acento);
+  margin: 0 auto 20px;
+  box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
+}
+
+.sobre-nome { font-size: 1.5rem; color: var(--texto); margin-bottom: 4px; font-family: ui-monospace, monospace; }
+.sobre-curso { color: var(--acento); font-size: 0.9rem; margin-bottom: 24px; letter-spacing: 0.05em; }
+
+.sobre-bio {
+  color: var(--texto-fraco);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.sobre-links { margin-top: 24px; }
