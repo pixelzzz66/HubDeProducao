@@ -1,1 +1,16 @@
-
+[
+  {
+    "categoria": "Logos e Símbolos",
+    "itens": [
+      { "nome": "Logo UNICAMP", "arquivo": "repositorio/unicamp.png", "tipo": "imagem" },
+      { "nome": "Logo FCA", "arquivo": "repositorio/fca.png", "tipo": "imagem" }
+    ]
+  },
+  {
+    "categoria": "Templates e Capas",
+    "itens": [
+      { "nome": "Capa de Relatório (Word)", "arquivo": "repositorio/capa-relatorio.docx", "tipo": "documento" },
+      { "nome": "Template de Slides", "arquivo": "repositorio/template-slides.pptx", "tipo": "documento" }
+    ]
+  }
+]
