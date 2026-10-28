@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Textos — Hub de Produção</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header id="app-header"></header>
+  <main id="app-main">
+    <h1>Textos</h1>
+    <p>Editor com formatação ABNT. Exporta para PDF ou DOCX. Nada é enviado para servidor — tudo roda no navegador.</p>
 
+    <div class="toolbar-editor">
+      <div class="toolbar-grupo">
+        <button type="button" class="btn btn-toolbar btn-inline" data-comando="bold" title="Negrito"><strong>B</strong></button>
+        <button type="button" class="btn btn-toolbar btn-inline" data-comando="italic" title="Itálico"><em>I</em></button>
+        <button type="button" class="btn btn-toolbar" id="btn-limpar" title="Limpar formatação">✕</button>
+      </div>
+      <div class="toolbar-grupo">
+        <button type="button" class="btn btn-toolbar btn-estilo" data-estilo="paragrafo">Parágrafo</button>
+        <button type="button" class="btn btn-toolbar btn-estilo" data-estilo="titulo-secao">Título</button>
+        <button type="button" class="btn btn-toolbar btn-estilo" data-estilo="citacao-longa">Citação longa</button>
+      </div>
+      <div class="toolbar-grupo">
+        <button type="button" class="btn btn-toolbar" id="btn-referencia">+ Referência</button>
+      </div>
+      <div class="toolbar-grupo toolbar-exportar">
+        <button type="button" class="btn btn-primary" id="btn-pdf">Exportar PDF</button>
+        <button type="button" class="btn btn-primary" id="btn-docx">Exportar DOCX</button>
+      </div>
+    </div>
+
+    <p class="info-exportar">Para PDF: na janela de impressão, escolha “Salvar como PDF”.</p>
+
+    <div class="editor-wrap">
+      <div id="editor" class="folha-abnt" contenteditable="true" spellcheck="true">
+        <div><br></div>
+      </div>
+    </div>
+  </main>
+  <footer id="app-footer"></footer>
+
+  <!-- Modal de referência -->
+  <div id="modal-referencia" class="modal">
+    <div class="modal-conteudo">
+      <h3>Inserir referência ABNT</h3>
+
+      <label class="campo">
+        Tipo de referência
+        <select id="ref-tipo">
+          <option value="livro">Livro</option>
+          <option value="artigo">Artigo de periódico</option>
+          <option value="site">Site / Página web</option>
+          <option value="tcc">TCC / Dissertação / Tese</option>
+        </select>
+      </label>
+
+      <div id="ref-campos" class="ref-campos"></div>
+
+      <div class="ref-preview-titulo">Prévia:</div>
+      <div id="ref-preview" class="ref-preview"></div>
+
+      <div class="acoes">
+        <button type="button" id="ref-cancelar" class="btn btn-ghost">Cancelar</button>
+        <button type="button" id="ref-inserir" class="btn btn-primary">Inserir no documento</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/textos.js"></script>
+</body>
+</html>
