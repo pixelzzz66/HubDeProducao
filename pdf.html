@@ -10,9 +10,96 @@
   <header id="app-header"></header>
   <main id="app-main">
     <h1>PDF</h1>
-    <p>Em breve: juntar, dividir e converter páginas.</p>
+    <p>Juntar, extrair páginas e converter para/de imagens. Tudo no navegador — nenhum arquivo é enviado para servidor.</p>
+
+    <!-- ─── JUNTAR ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Juntar PDFs</h2>
+      <p class="ferramenta-desc">Adicione vários PDFs. Use as setas para ordenar. A ordem será respeitada no arquivo final.</p>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Adicionar PDFs
+          <input type="file" id="merge-input" accept="application/pdf,.pdf" multiple hidden />
+        </label>
+      </div>
+      <div id="merge-lista" class="arquivo-lista"></div>
+      <div class="acoes">
+        <button type="button" id="merge-executar" class="btn btn-primary" disabled>Juntar</button>
+        <button type="button" id="merge-limpar" class="btn btn-ghost">Limpar lista</button>
+      </div>
+    </section>
+
+    <!-- ─── EXTRAIR PÁGINAS ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Extrair páginas</h2>
+      <p class="ferramenta-desc">Gera um novo PDF apenas com as páginas indicadas.</p>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Escolher PDF
+          <input type="file" id="split-input" accept="application/pdf,.pdf" hidden />
+        </label>
+        <span id="split-nome" class="arquivo-nome"></span>
+      </div>
+      <div id="split-controles" class="controles-linha" hidden>
+        <label class="campo">
+          Páginas
+          <input type="text" id="split-paginas" placeholder="Ex: 1-3, 5, 7-9" />
+        </label>
+        <span id="split-total" class="info-arquivo"></span>
+        <button type="button" id="split-executar" class="btn btn-primary">Extrair</button>
+      </div>
+    </section>
+
+    <!-- ─── PDF → IMAGENS ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">PDF → Imagens</h2>
+      <p class="ferramenta-desc">Cada página vira uma imagem separada, com botão próprio de download.</p>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Escolher PDF
+          <input type="file" id="pdf2img-input" accept="application/pdf,.pdf" hidden />
+        </label>
+        <span id="pdf2img-nome" class="arquivo-nome"></span>
+      </div>
+      <div id="pdf2img-controles" class="controles-linha" hidden>
+        <label class="campo">
+          Formato
+          <select id="pdf2img-formato">
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg">JPEG</option>
+          </select>
+        </label>
+        <label class="campo">
+          Escala
+          <input type="number" id="pdf2img-escala" min="1" max="4" step="0.5" value="2" />
+        </label>
+        <button type="button" id="pdf2img-executar" class="btn btn-primary">Converter</button>
+      </div>
+      <div id="pdf2img-resultado" class="paginas-grid" hidden></div>
+    </section>
+
+    <!-- ─── IMAGENS → PDF ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Imagens → PDF</h2>
+      <p class="ferramenta-desc">Cada imagem vira uma página do PDF, mantendo a proporção original.</p>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Adicionar imagens
+          <input type="file" id="img2pdf-input" accept="image/*" multiple hidden />
+        </label>
+      </div>
+      <div id="img2pdf-lista" class="arquivo-lista"></div>
+      <div class="acoes">
+        <button type="button" id="img2pdf-executar" class="btn btn-primary" disabled>Gerar PDF</button>
+        <button type="button" id="img2pdf-limpar" class="btn btn-ghost">Limpar lista</button>
+      </div>
+    </section>
   </main>
   <footer id="app-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
   <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pdf-tools.js"></script>
 </body>
 </html>
