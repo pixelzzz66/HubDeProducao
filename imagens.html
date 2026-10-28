@@ -171,6 +171,25 @@
         <span id="bg-nome" class="arquivo-nome"></span>
       </div>
 
+      <!-- NOVO: Prévia da imagem original -->
+      <div id="bg-preview-original-wrap" class="resultado" hidden style="margin-top: 16px;">
+        <p class="info-arquivo">Imagem selecionada:</p>
+        <div class="resultado-wrap">
+          <img id="bg-preview-original" alt="Original" style="max-height: 200px;" />
+        </div>
+      </div>
+
+      <div id="bg-controles" class="controles-linha" hidden>
+        <label class="campo">
+          Modelo
+          <select id="bg-modelo">
+            <option value="isnet_quint8">Rápido (~40 MB)</option>
+            <option value="isnet_fp16">Alta qualidade (~80 MB)</option>
+          </select>
+        </label>
+        <button type="button" id="bg-executar" class="btn btn-primary">Remover fundo</button>
+      </div>
+
       <div id="bg-controles" class="controles-linha" hidden>
         <label class="campo">
           Modelo
