@@ -1059,7 +1059,7 @@ textarea:focus {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 16px;
-  text-align: left;
+  text-align: center;
 }
 
 .sobre-links { margin-top: 24px; }
