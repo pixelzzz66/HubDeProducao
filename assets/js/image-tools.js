@@ -1,4 +1,4 @@
-// image-tools.js — recorte + redimensionamento + conversão + Base64
+// image-tools.js — recorte + redimensionamento + conversão + Base64 + remoção de fundo
 
 // ═══════════════════════════════════════════════════════════════
 //  RECORTE (já existente)
@@ -82,7 +82,7 @@ document.getElementById("btn-resetar").addEventListener("click", () => {
 });
 
 // ═══════════════════════════════════════════════════════════════
-//  REDIMENSIONAR
+//  REDIMENSIONAR (já existente)
 // ═══════════════════════════════════════════════════════════════
 
 const resizeInput    = document.getElementById("resize-input");
@@ -115,7 +115,6 @@ resizeInput.addEventListener("change", (e) => {
   img.src = URL.createObjectURL(file);
 });
 
-// Manter proporção ao digitar largura/altura
 resizeLargura.addEventListener("input", () => {
   if (!resizeImgOriginal || !resizeProporcao.checked) return;
   const ratio = resizeImgOriginal.naturalHeight / resizeImgOriginal.naturalWidth;
@@ -151,7 +150,7 @@ document.getElementById("resize-baixar").addEventListener("click", () => {
 });
 
 // ═══════════════════════════════════════════════════════════════
-//  CONVERTER FORMATO / QUALIDADE
+//  CONVERTER FORMATO / QUALIDADE (já existente)
 // ═══════════════════════════════════════════════════════════════
 
 const convertInput    = document.getElementById("convert-input");
@@ -193,7 +192,6 @@ document.getElementById("convert-executar").addEventListener("click", () => {
   c.width  = convertImgOriginal.naturalWidth;
   c.height = convertImgOriginal.naturalHeight;
   const ctx = c.getContext("2d");
-  // JPEG não suporta transparência; fundo branco evita bordas pretas
   if (formato === "image/jpeg") {
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, c.width, c.height);
@@ -219,7 +217,7 @@ document.getElementById("convert-baixar").addEventListener("click", () => {
 });
 
 // ═══════════════════════════════════════════════════════════════
-//  BASE64
+//  BASE64 (já existente)
 // ═══════════════════════════════════════════════════════════════
 
 const b64Input     = document.getElementById("b64-input");
@@ -276,7 +274,99 @@ document.getElementById("b64-copiar").addEventListener("click", async () => {
 });
 
 // ═══════════════════════════════════════════════════════════════
-//  UTILITÁRIO COMPARTILHADO
+//  REMOÇÃO DE FUNDO (IA) — NOVO
+// ═══════════════════════════════════════════════════════════════
+
+const bgInput = document.getElementById("bg-input");
+const bgNome = document.getElementById("bg-nome");
+const bgControles = document.getElementById("bg-controles");
+const bgModelo = document.getElementById("bg-modelo");
+const bgExecutar = document.getElementById("bg-executar");
+const bgProgresso = document.getElementById("bg-progresso");
+const bgProgressoBarra = bgProgresso.querySelector(".progresso-preenchimento");
+const bgProgressoTexto = bgProgresso.querySelector(".progresso-texto");
+const bgResultado = document.getElementById("bg-resultado");
+const bgPreview = document.getElementById("bg-preview");
+const bgBaixar = document.getElementById("bg-baixar");
+
+let bgArquivo = null;
+let bgBlobResultado = null;
+let removeBackgroundFn = null;
+
+bgInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  bgArquivo = file;
+  bgNome.textContent = file.name;
+  bgControles.hidden = false;
+  bgResultado.hidden = true;
+  bgProgresso.hidden = true;
+});
+
+bgExecutar.addEventListener("click", async () => {
+  if (!bgArquivo) return;
+
+  const modelo = bgModelo.value;
+
+  bgExecutar.disabled = true;
+  bgExecutar.textContent = "Processando...";
+  bgProgresso.hidden = false;
+  bgProgressoBarra.style.width = "0%";
+  bgProgressoTexto.textContent = "Preparando...";
+
+  try {
+    if (!removeBackgroundFn) {
+      bgProgressoTexto.textContent = "Carregando biblioteca...";
+      const module = await import("https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm");
+      removeBackgroundFn = module.removeBackground;
+    }
+
+    const blob = await removeBackgroundFn(bgArquivo, {
+      model: modelo,
+      output: { format: "image/png" },
+      progress: (key, current, total) => {
+        if (total > 0) {
+          const pct = Math.round((current / total) * 100);
+          bgProgressoBarra.style.width = pct + "%";
+          let label = "";
+          if (key === "download") label = `Baixando modelo (${pct}%)`;
+          else if (key === "load") label = `Carregando modelo (${pct}%)`;
+          else if (key === "run") label = `Processando imagem (${pct}%)`;
+          else if (key === "postprocess") label = `Pós-processando (${pct}%)`;
+          else label = `${pct}%`;
+          bgProgressoTexto.textContent = label;
+        }
+      },
+    });
+
+    bgBlobResultado = blob;
+    const url = URL.createObjectURL(blob);
+    bgPreview.src = url;
+    bgResultado.hidden = false;
+    bgResultado.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    bgProgressoTexto.textContent = "Concluído!";
+    bgProgressoBarra.style.width = "100%";
+    setTimeout(() => { bgProgresso.hidden = true; }, 800);
+
+  } catch (err) {
+    console.error(err);
+    alert("Erro ao remover fundo: " + err.message);
+    bgProgresso.hidden = true;
+  } finally {
+    bgExecutar.disabled = false;
+    bgExecutar.textContent = "Remover fundo";
+  }
+});
+
+bgBaixar.addEventListener("click", () => {
+  if (!bgBlobResultado) return;
+  const nomeBase = bgArquivo.name.replace(/\.[^.]+$/, "");
+  baixarBlob(bgBlobResultado, `${nomeBase}-sem-fundo.png`);
+});
+
+// ═══════════════════════════════════════════════════════════════
+//  UTILITÁRIO COMPARTILHADO (já existente)
 // ═══════════════════════════════════════════════════════════════
 
 function baixarBlob(blob, nome) {
