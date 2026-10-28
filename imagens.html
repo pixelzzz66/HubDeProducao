@@ -158,16 +158,43 @@
       </div>
     </section>
 
-    <!-- ─── EM BREVE ─── -->
+    <!-- ─── REMOVER FUNDO (IA) ─── -->
     <section class="ferramenta">
       <h2 class="ferramenta-titulo">Remover fundo (IA)</h2>
-      <p class="ferramenta-desc em-breve">Em breve. O modelo roda no navegador e é baixado uma única vez (~40 MB). Depois fica em cache.</p>
-    </section>
-  </main>
-  <footer id="app-footer"></footer>
+      <p class="ferramenta-desc">Remove o fundo da imagem usando um modelo que roda no seu navegador. O modelo é baixado na primeira utilização (~40 MB ou ~80 MB) e fica em cache.</p>
 
-  <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
-  <script type="module" src="assets/js/app.js"></script>
-  <script type="module" src="assets/js/image-tools.js"></script>
-</body>
-</html>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Escolher imagem
+          <input type="file" id="bg-input" accept="image/*" hidden />
+        </label>
+        <span id="bg-nome" class="arquivo-nome"></span>
+      </div>
+
+      <div id="bg-controles" class="controles-linha" hidden>
+        <label class="campo">
+          Modelo
+          <select id="bg-modelo">
+            <option value="isnet_quint8">Rápido (~40 MB)</option>
+            <option value="isnet_fp16">Alta qualidade (~80 MB)</option>
+          </select>
+        </label>
+        <button type="button" id="bg-executar" class="btn btn-primary">Remover fundo</button>
+      </div>
+
+      <div id="bg-progresso" class="progresso" hidden>
+        <div class="progresso-barra">
+          <div class="progresso-preenchimento"></div>
+        </div>
+        <span class="progresso-texto"></span>
+      </div>
+
+      <div id="bg-resultado" class="resultado" hidden>
+        <div class="resultado-wrap xadrez">
+          <img id="bg-preview" alt="Resultado da remoção de fundo" />
+        </div>
+        <div class="acoes">
+          <button type="button" id="bg-baixar" class="btn btn-primary">Baixar PNG</button>
+        </div>
+      </div>
+    </section>
