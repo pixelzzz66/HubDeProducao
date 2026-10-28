@@ -12,7 +12,8 @@
     "categoria": "Faculdade",
     "itens": [
       { "nome": "Drive da Veterana", "url": "https://drive.google.com/drive/folders/1x-Ocriz--AIq4j-V9hJvkM8CheqqibD_?hl=pt-br", "icone": "⭐", "descricao": "Provas antigas e materiais" },
-      { "nome": "Portal do Aluno",   "url": "https://www.dac.unicamp.br/portal/",  "icone": "🎓", "descricao": "DAC/UNICAMP" }
+      { "nome": "Portal do Aluno",   "url": "https://www.dac.unicamp.br/portal/",  "icone": "🎓", "descricao": "DAC/UNICAMP" },
+      { "nome": "GDE",               "url": "https://grade.daconline.unicamp.br/login/",  "icone": "🧭", "descricao": "Auxiliador de disciplinas" }
     ]
   },
   {
