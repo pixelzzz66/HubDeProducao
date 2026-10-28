@@ -288,6 +288,8 @@ const bgProgressoTexto = bgProgresso.querySelector(".progresso-texto");
 const bgResultado = document.getElementById("bg-resultado");
 const bgPreview = document.getElementById("bg-preview");
 const bgBaixar = document.getElementById("bg-baixar");
+const bgPreviewOriginal = document.getElementById("bg-preview-original");
+const bgPreviewOriginalWrap = document.getElementById("bg-preview-original-wrap");
 
 let bgArquivo = null;
 let bgBlobResultado = null;
@@ -298,6 +300,11 @@ bgInput.addEventListener("change", (e) => {
   if (!file) return;
   bgArquivo = file;
   bgNome.textContent = file.name;
+  
+  // Mostrar a imagem original para o usuário ver que funcionou
+  bgPreviewOriginal.src = URL.createObjectURL(file);
+  bgPreviewOriginalWrap.hidden = false;
+  
   bgControles.hidden = false;
   bgResultado.hidden = true;
   bgProgresso.hidden = true;
@@ -317,6 +324,7 @@ bgExecutar.addEventListener("click", async () => {
   try {
     if (!removeBackgroundFn) {
       bgProgressoTexto.textContent = "Carregando biblioteca...";
+      // Usando a versão via ESM
       const module = await import("https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm");
       removeBackgroundFn = module.removeBackground;
     }
