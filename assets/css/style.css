@@ -884,6 +884,8 @@ textarea:focus {
   font-size: 0.95rem;
   color: var(--texto-fraco);
   letter-spacing: 0.05em;
+  margin-left: auto;   /* centraliza a caixa do texto */
+  margin-right: auto;  /* centraliza a caixa do texto */
 }
 
 .dashboard-grid {
@@ -1008,7 +1010,13 @@ textarea:focus {
 }
 
 .repositorio-contribuir h3 { color: var(--acento); margin-bottom: 8px; font-family: ui-monospace, monospace; }
-.repositorio-contribuir p { color: var(--texto-fraco); font-size: 0.9rem; margin-bottom: 16px; }
+.repositorio-contribuir p {
+  color: var(--texto-fraco);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  margin-left: auto;   /* centraliza a caixa do texto */
+  margin-right: auto;  /* centraliza a caixa do texto */
+}
 
 /* --- SOBRE --- */
 .sobre-conteudo { display: flex; justify-content: center; padding: 24px 0; }
