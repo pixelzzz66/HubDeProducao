@@ -750,3 +750,97 @@ textarea:focus {
   color: var(--texto-fraco);
   font-family: ui-monospace, monospace;
 }
+
+/* ─── Etapa 7: FCA ─── */
+
+.fca-controles {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin: 24px 0;
+  padding: 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+}
+
+.fca-controles .campo input { width: 260px; }
+
+.fca-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.fca-semestre-titulo {
+  font-family: ui-monospace, "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--texto-fraco);
+  margin-bottom: 12px;
+  padding-left: 12px;
+  border-left: 2px solid var(--acento);
+}
+
+.fca-disciplinas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.fca-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.15s;
+}
+
+.fca-card:hover { border-color: var(--acento); }
+
+.fca-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.fca-codigo {
+  font-family: ui-monospace, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--acento);
+  letter-spacing: 0.04em;
+}
+
+.fca-creditos {
+  font-size: 0.72rem;
+  color: var(--texto-fraco);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--linha);
+}
+
+.fca-nome {
+  font-size: 0.92rem;
+  color: var(--texto);
+  line-height: 1.3;
+}
+
+.fca-pre {
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+  line-height: 1.4;
+  border-top: 1px solid var(--linha);
+  padding-top: 8px;
+}
+
+.fca-pre-label { font-weight: 600; }
+
+.fca-pre-valor { color: var(--texto); }
