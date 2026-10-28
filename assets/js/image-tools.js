@@ -324,13 +324,16 @@ bgExecutar.addEventListener("click", async () => {
   try {
     if (!removeBackgroundFn) {
       bgProgressoTexto.textContent = "Carregando biblioteca...";
-      const module = await import("https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm");
+      // Passo 1: Trocamos para a versão estável 1.5.1
+      const module = await import("https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.1/+esm");
       removeBackgroundFn = module.removeBackground;
     }
 
+    // Passo 2: Adicionamos a configuração 'fetchArgs' para evitar bloqueios de CORS
     const blob = await removeBackgroundFn(bgArquivo, {
       model: modelo,
       output: { format: "image/png" },
+      fetchArgs: { mode: 'cors' }, // Ajuda a evitar bloqueios de CORS
       progress: (key, current, total) => {
         if (total > 0) {
           const pct = Math.round((current / total) * 100);
