@@ -1,1 +1,155 @@
+{
+  "cursos": [
+    {
+      "codigo": "102G",
+      "nome": "Engenharia de Produção",
+      "turno": "Integral",
+      "total_creditos": 256,
+      "disciplinas": [
+        { "codigo": "LE200", "nome": "Química Geral", "semestre": 1, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "NC103", "nome": "Natureza e Tecnologia na Sociedade Contemporânea", "semestre": 1, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE100", "nome": "Desenho Técnico Assistido por Computador", "semestre": 1, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE101", "nome": "Cálculo I", "semestre": 1, "creditos": 6, "pre_requisitos": [] },
+        { "codigo": "LE105", "nome": "Introdução à Engenharia", "semestre": 1, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "LE106", "nome": "Geometria Analítica e Álgebra Linear", "semestre": 1, "creditos": 6, "pre_requisitos": [] },
 
+        { "codigo": "LE303", "nome": "Algoritmos e Programação de Computadores", "semestre": 2, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE400", "nome": "Mecânica Geral", "semestre": 2, "creditos": 4, "pre_requisitos": ["LE101", "LE106"] },
+        { "codigo": "NC104", "nome": "Introdução à Ciência dos Dados e à Informação", "semestre": 2, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE201", "nome": "Física Geral I", "semestre": 2, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE202", "nome": "Física Experimental I", "semestre": 2, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "LE203", "nome": "Cálculo II", "semestre": 2, "creditos": 6, "pre_requisitos": ["LE101", "LE106"] },
+
+        { "codigo": "LE302", "nome": "Física Experimental II", "semestre": 3, "creditos": 2, "pre_requisitos": ["LE202"] },
+        { "codigo": "LE500", "nome": "Resistência dos Materiais", "semestre": 3, "creditos": 4, "pre_requisitos": ["LE400"] },
+        { "codigo": "NC301", "nome": "Filosofia e Ciências Humanas", "semestre": 3, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "NC400", "nome": "Noções de Administração e Gestão", "semestre": 3, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE103", "nome": "Oficinas", "semestre": 3, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE300", "nome": "Cálculo III", "semestre": 3, "creditos": 6, "pre_requisitos": ["LE203"] },
+        { "codigo": "LE301", "nome": "Física Geral II", "semestre": 3, "creditos": 4, "pre_requisitos": ["LE201"] },
+
+        { "codigo": "LE503", "nome": "Tecnologia Mecânica", "semestre": 4, "creditos": 2, "pre_requisitos": ["LE100", "LE103"] },
+        { "codigo": "LE401", "nome": "Estrutura e Propriedade dos Materiais", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE200"] },
+        { "codigo": "LE402", "nome": "Cálculo Numérico", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE106", "LE303"] },
+        { "codigo": "LE404", "nome": "Física Geral III", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE301"] },
+        { "codigo": "LE405", "nome": "Física Experimental III", "semestre": 4, "creditos": 2, "pre_requisitos": ["LE302"] },
+        { "codigo": "LE408", "nome": "Termodinâmica I", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE200", "LE101"] },
+        { "codigo": "LE409", "nome": "Estatística e Probabilidade para Engenharia", "semestre": 4, "creditos": 4, "pre_requisitos": ["NC104"] },
+        { "codigo": "ER402", "nome": "Economia para Engenharia", "semestre": 4, "creditos": 4, "pre_requisitos": [] },
+
+        { "codigo": "LE690", "nome": "Metrologia Industrial", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE409"] },
+        { "codigo": "ER904", "nome": "Inteligência Artificial Aplicada à Engenharia", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE409", "LE101", "LE303", "NC104"] },
+        { "codigo": "LE406", "nome": "Eletrotécnica", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE405"] },
+        { "codigo": "LE501", "nome": "Fenômenos de Transporte", "semestre": 5, "creditos": 4, "pre_requisitos": ["LE408", "LE301"] },
+        { "codigo": "LE504", "nome": "Termodinâmica II", "semestre": 5, "creditos": 4, "pre_requisitos": ["LE408"] },
+        { "codigo": "LE505", "nome": "Pesquisa Operacional I", "semestre": 5, "creditos": 4, "pre_requisitos": ["LE402"] },
+
+        { "codigo": "LE699", "nome": "Operações Unitárias", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE501"] },
+        { "codigo": "LE801", "nome": "Planejamento e Controle de Produção", "semestre": 6, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "ER201", "nome": "Gestão Sustentável", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE303"] },
+        { "codigo": "ER603", "nome": "Noções Gerais dos Processos de Manufatura", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE503"] },
+        { "codigo": "LE609", "nome": "Fundamentos de Finanças e Custos", "semestre": 6, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE611", "nome": "Pesquisa Operacional II", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE505"] },
+
+        { "codigo": "LE619", "nome": "Gestão da Qualidade", "semestre": 7, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "LE701", "nome": "Gestão de Projetos", "semestre": 7, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "ER701", "nome": "Simulação de Sistemas", "semestre": 7, "creditos": 4, "pre_requisitos": ["LE303", "LE409"] },
+        { "codigo": "LE703", "nome": "Sistemas Produtivos", "semestre": 7, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "ER704", "nome": "Engenharia Econômica", "semestre": 7, "creditos": 4, "pre_requisitos": ["ER402"] },
+        { "codigo": "ER905", "nome": "Aplicação dos Materiais em Engenharia", "semestre": 7, "creditos": 2, "pre_requisitos": ["LE401", "LE500"] },
+        { "codigo": "GL601", "nome": "Estratégia e Planejamento", "semestre": 7, "creditos": 4, "pre_requisitos": ["NC400"] },
+        { "codigo": "LE207", "nome": "Laboratório de Fluidos e Transferência de Calor", "semestre": 7, "creditos": 4, "pre_requisitos": ["LE501", "LE504", "LE699"] },
+
+        { "codigo": "LE012", "nome": "Manutenção Industrial", "semestre": 8, "creditos": 2, "pre_requisitos": ["LE406"] },
+        { "codigo": "LE691", "nome": "Ergonomia e Saúde no Trabalho", "semestre": 8, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE906", "nome": "Gestão do Desenvolvimento de Produto", "semestre": 8, "creditos": 4, "pre_requisitos": ["LE701"] },
+        { "codigo": "MG600", "nome": "Gestão da Cadeia de Suprimentos", "semestre": 8, "creditos": 4, "pre_requisitos": ["LE703", "LE409", "NC104"] },
+        { "codigo": "ER808", "nome": "Projeto de Fábrica", "semestre": 8, "creditos": 2, "pre_requisitos": ["LE619"] },
+        { "codigo": "ER903", "nome": "Controle Estatístico da Qualidade", "semestre": 8, "creditos": 2, "pre_requisitos": ["LE619", "LE409"] },
+
+        { "codigo": "LE905", "nome": "Planejamento de Experimento e Otimização de Processos", "semestre": 9, "creditos": 2, "pre_requisitos": ["LE103", "ER903"] },
+        { "codigo": "LE907", "nome": "Estágio em Engenharia I", "semestre": 9, "creditos": 8, "pre_requisitos": [] },
+        { "codigo": "LE014", "nome": "Trabalho de Conclusão de Curso", "semestre": 9, "creditos": 8, "pre_requisitos": [] },
+
+        { "codigo": "LE917", "nome": "Estágio em Engenharia II", "semestre": 10, "creditos": 10, "pre_requisitos": [] }
+      ]
+    },
+    {
+      "codigo": "101",
+      "nome": "Engenharia de Manufatura",
+      "turno": "Integral",
+      "total_creditos": 256,
+      "disciplinas": [
+        { "codigo": "LE200", "nome": "Química Geral", "semestre": 1, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "NC103", "nome": "Natureza e Tecnologia na Sociedade Contemporânea", "semestre": 1, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE100", "nome": "Desenho Técnico Assistido por Computador", "semestre": 1, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE101", "nome": "Cálculo I", "semestre": 1, "creditos": 6, "pre_requisitos": [] },
+        { "codigo": "LE105", "nome": "Introdução à Engenharia", "semestre": 1, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "LE106", "nome": "Geometria Analítica e Álgebra Linear", "semestre": 1, "creditos": 6, "pre_requisitos": [] },
+
+        { "codigo": "LE303", "nome": "Algoritmos e Programação de Computadores", "semestre": 2, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE400", "nome": "Mecânica Geral", "semestre": 2, "creditos": 4, "pre_requisitos": ["LE101", "LE106"] },
+        { "codigo": "NC104", "nome": "Introdução à Ciência dos Dados e à Informação", "semestre": 2, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE201", "nome": "Física Geral I", "semestre": 2, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE202", "nome": "Física Experimental I", "semestre": 2, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "LE203", "nome": "Cálculo II", "semestre": 2, "creditos": 6, "pre_requisitos": ["LE101", "LE106"] },
+
+        { "codigo": "LE302", "nome": "Física Experimental II", "semestre": 3, "creditos": 2, "pre_requisitos": ["LE202"] },
+        { "codigo": "LE500", "nome": "Resistência dos Materiais", "semestre": 3, "creditos": 4, "pre_requisitos": ["LE400"] },
+        { "codigo": "NC301", "nome": "Filosofia e Ciências Humanas", "semestre": 3, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "NC400", "nome": "Noções de Administração e Gestão", "semestre": 3, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE103", "nome": "Oficinas", "semestre": 3, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE300", "nome": "Cálculo III", "semestre": 3, "creditos": 6, "pre_requisitos": ["LE203"] },
+        { "codigo": "LE301", "nome": "Física Geral II", "semestre": 3, "creditos": 4, "pre_requisitos": ["LE201"] },
+
+        { "codigo": "LE503", "nome": "Tecnologia Mecânica", "semestre": 4, "creditos": 2, "pre_requisitos": ["LE100", "LE103"] },
+        { "codigo": "LE401", "nome": "Estrutura e Propriedade dos Materiais", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE200"] },
+        { "codigo": "LE402", "nome": "Cálculo Numérico", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE106", "LE303"] },
+        { "codigo": "LE404", "nome": "Física Geral III", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE301"] },
+        { "codigo": "LE405", "nome": "Física Experimental III", "semestre": 4, "creditos": 2, "pre_requisitos": ["LE302"] },
+        { "codigo": "LE408", "nome": "Termodinâmica I", "semestre": 4, "creditos": 4, "pre_requisitos": ["LE200", "LE101"] },
+        { "codigo": "LE409", "nome": "Estatística e Probabilidade para Engenharia", "semestre": 4, "creditos": 4, "pre_requisitos": ["NC104"] },
+        { "codigo": "EU903", "nome": "Cinemática de Mecanismos", "semestre": 4, "creditos": 2, "pre_requisitos": ["LE400", "LE300"] },
+
+        { "codigo": "LE501", "nome": "Fenômenos de Transporte", "semestre": 5, "creditos": 4, "pre_requisitos": ["LE408", "LE301"] },
+        { "codigo": "LE504", "nome": "Termodinâmica II", "semestre": 5, "creditos": 4, "pre_requisitos": ["LE408"] },
+        { "codigo": "EU501", "nome": "Transformação de Fase dos Materiais", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE401"] },
+        { "codigo": "LE505", "nome": "Pesquisa Operacional I", "semestre": 5, "creditos": 4, "pre_requisitos": ["LE402"] },
+        { "codigo": "EU604", "nome": "Automação Industrial", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE303"] },
+        { "codigo": "LE690", "nome": "Metrologia Industrial", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE103"] },
+        { "codigo": "EU605", "nome": "Dinâmica de Mecanismos", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE300"] },
+        { "codigo": "EU909", "nome": "Métodos Numéricos Aplicados à Engenharia", "semestre": 5, "creditos": 2, "pre_requisitos": ["EU903", "LE402"] },
+        { "codigo": "LE406", "nome": "Eletrotécnica", "semestre": 5, "creditos": 2, "pre_requisitos": ["LE405"] },
+
+        { "codigo": "EU904", "nome": "Conformação Mecânica dos Metais", "semestre": 6, "creditos": 2, "pre_requisitos": ["LE503", "LE401"] },
+        { "codigo": "EU906", "nome": "Fundição e Soldagem", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE503"] },
+        { "codigo": "EU911", "nome": "Usinagem", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE503", "LE401"] },
+        { "codigo": "LE609", "nome": "Fundamentos de Finanças e Custos", "semestre": 6, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE699", "nome": "Operações Unitárias", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE501"] },
+        { "codigo": "EU250", "nome": "Metodologia de Projeto", "semestre": 6, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "EU602", "nome": "Elementos de Máquinas", "semestre": 6, "creditos": 4, "pre_requisitos": ["LE500", "EU605"] },
+
+        { "codigo": "EU905", "nome": "Engenharia Auxiliada por Computador", "semestre": 7, "creditos": 4, "pre_requisitos": ["EU909", "EU602"] },
+        { "codigo": "EU908", "nome": "Metalurgia do Pó, Materiais Cerâmicos e Conjugados", "semestre": 7, "creditos": 2, "pre_requisitos": ["EU906", "LE100", "LE103", "LE503"] },
+        { "codigo": "LE207", "nome": "Laboratório de Fluidos e Transferência de Calor", "semestre": 7, "creditos": 4, "pre_requisitos": ["LE501", "LE504", "LE699"] },
+        { "codigo": "LE619", "nome": "Gestão da Qualidade", "semestre": 7, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "LE701", "nome": "Gestão de Projetos", "semestre": 7, "creditos": 4, "pre_requisitos": [] },
+        { "codigo": "LE703", "nome": "Sistemas Produtivos", "semestre": 7, "creditos": 2, "pre_requisitos": [] },
+        { "codigo": "EU901", "nome": "Materiais Poliméricos", "semestre": 7, "creditos": 2, "pre_requisitos": ["LE401"] },
+
+        { "codigo": "LE906", "nome": "Gestão do Desenvolvimento de Produto", "semestre": 8, "creditos": 4, "pre_requisitos": ["LE701"] },
+        { "codigo": "EU704", "nome": "Engenharia de Superfície", "semestre": 8, "creditos": 2, "pre_requisitos": ["LE401", "LE200"] },
+        { "codigo": "EU910", "nome": "Seleção de Materiais para Engenharia", "semestre": 8, "creditos": 2, "pre_requisitos": ["LE500", "LE200", "LE101", "LE106", "LE400", "LE401"] },
+        { "codigo": "EU917", "nome": "Laboratório de Materiais e Manufatura", "semestre": 8, "creditos": 4, "pre_requisitos": ["EU904", "EU906", "EU911", "LE401", "LE100", "LE200", "LE103", "LE503"] },
+        { "codigo": "LE012", "nome": "Manutenção Industrial", "semestre": 8, "creditos": 2, "pre_requisitos": ["LE406"] },
+        { "codigo": "LE691", "nome": "Ergonomia e Saúde no Trabalho", "semestre": 8, "creditos": 4, "pre_requisitos": [] },
+
+        { "codigo": "EU802", "nome": "Projeto de Ferramentas para Fabricação", "semestre": 9, "creditos": 4, "pre_requisitos": ["EU911"] },
+        { "codigo": "LE014", "nome": "Trabalho de Conclusão de Curso", "semestre": 9, "creditos": 8, "pre_requisitos": [] },
+        { "codigo": "LE907", "nome": "Estágio em Engenharia I", "semestre": 9, "creditos": 8, "pre_requisitos": [] },
+
+        { "codigo": "LE917", "nome": "Estágio em Engenharia II", "semestre": 10, "creditos": 10, "pre_requisitos": [] }
+      ]
+    }
+  ]
+}
