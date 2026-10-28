@@ -10,13 +10,71 @@
   <header id="app-header"></header>
 
   <main id="app-main">
-    <h1>Hub de Produção</h1>
-    <p>A central do estudante de Engenharia de Produção — FCA/UNICAMP.</p>
-    <p>Em construção. Em breve: atalhos, ferramentas rápidas e consulta de disciplinas.</p>
+    <!-- HUD de Boas-Vindas -->
+    <section class="hud-boas-vindas">
+      <div class="hud-linha-topo"></div>
+      <h1 class="hud-titulo">SISTEMA ONLINE</h1>
+      <p class="hud-subtitulo">Bem-vindo ao Hub de Produção. Selecione um módulo abaixo para iniciar.</p>
+      <div class="hud-linha-base"></div>
+    </section>
+
+    <!-- Grid de Ferramentas -->
+    <section class="dashboard-grid">
+      <a href="links.html" class="dash-card">
+        <span class="dash-icone">🔗</span>
+        <h2 class="dash-titulo">Links</h2>
+        <p class="dash-desc">Acesso rápido ao Drive da Veterana, Google Workspace, GDE e mais.</p>
+      </a>
+
+      <a href="imagens.html" class="dash-card">
+        <span class="dash-icone">🖼️</span>
+        <h2 class="dash-titulo">Imagens</h2>
+        <p class="dash-desc">Recortar, redimensionar, converter formatos e gerar Base64.</p>
+      </a>
+
+      <a href="pdf.html" class="dash-card">
+        <span class="dash-icone">📄</span>
+        <h2 class="dash-titulo">PDF</h2>
+        <p class="dash-desc">Juntar arquivos, extrair páginas e converter para imagens.</p>
+      </a>
+
+      <a href="textos.html" class="dash-card">
+        <span class="dash-icone">📝</span>
+        <h2 class="dash-titulo">Textos (ABNT)</h2>
+        <p class="dash-desc">Editor com formatação ABNT, gerador de referências e exportação para DOCX/PDF.</p>
+      </a>
+
+      <a href="fca.html" class="dash-card">
+        <span class="dash-icone">🌳</span>
+        <h2 class="dash-titulo">FCA</h2>
+        <p class="dash-desc">Árvore de disciplinas, pré-requisitos e busca por matéria dos cursos.</p>
+      </a>
+
+      <a href="repositorio.html" class="dash-card">
+        <span class="dash-icone">📁</span>
+        <h2 class="dash-titulo">Repositório</h2>
+        <p class="dash-desc">Logos, capas de relatórios e templates prontos para uso.</p>
+      </a>
+    </section>
+
+    <!-- Rodapé de Status (HUD) -->
+    <section class="hud-status">
+      <div class="status-item">
+        <span class="status-label">STATUS DO SISTEMA</span>
+        <span class="status-valor ativo">● OPERACIONAL</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">VERSÃO</span>
+        <span class="status-valor">v0.1.0</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">ÚLTIMA ATUALIZAÇÃO</span>
+        <span class="status-valor">Hoje</span>
+      </div>
+    </section>
   </main>
 
   <footer id="app-footer"></footer>
-
   <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
