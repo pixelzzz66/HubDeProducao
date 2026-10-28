@@ -1,5 +1,4 @@
-// app.js — monta o cabeçalho e o rodapé em TODAS as páginas.
-// Cada página HTML só precisa ter <header id="app-header"> e <footer id="app-footer">.
+// app.js — monta o cabeçalho, rodapé e ícone da aba em TODAS as páginas.
 
 const NAV = [
   { label: "Início",      href: "index.html" },
@@ -15,8 +14,20 @@ const NAV = [
 async function iniciar() {
   const config = await fetch("data/config.json").then(r => r.json());
   document.title = config.nome;
+  adicionarFavicon();
   montarHeader(config);
   montarFooter(config);
+}
+
+function adicionarFavicon() {
+  // Evita duplicar se por acaso já existir no HTML
+  if (document.querySelector("link[rel='icon']")) return;
+  
+  const link = document.createElement("link");
+  link.rel = "icon";
+  link.type = "image/svg+xml";
+  link.href = "assets/img/favicon.svg";
+  document.head.appendChild(link);
 }
 
 function montarHeader(config) {
