@@ -622,3 +622,131 @@ textarea:focus {
   .folha-abnt > div.citacao-longa { color: #000 !important; }
   .folha-abnt > div.referencia   { color: #000 !important; }
 }
+
+/* ─── Etapa 6: ferramentas de PDF ─── */
+
+.arquivo-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.arquivo-lista .vazio {
+  color: var(--texto-fraco);
+  font-style: italic;
+  font-size: 0.85rem;
+  padding: 12px;
+  background: var(--bg-soft);
+  border: 1px dashed var(--linha);
+  border-radius: 6px;
+}
+
+.arquivo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+}
+
+.arquivo-indice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--linha);
+  font-family: ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--acento);
+  flex-shrink: 0;
+}
+
+.arquivo-nome-item {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+
+.arquivo-tamanho {
+  font-family: ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+  flex-shrink: 0;
+}
+
+.arquivo-acoes {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.btn-mini {
+  background: var(--bg);
+  color: var(--texto-fraco);
+  border: 1px solid var(--linha);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  min-width: 28px;
+  font-family: inherit;
+}
+
+.btn-mini:hover:not(:disabled) {
+  border-color: var(--acento);
+  color: var(--acento);
+}
+
+.btn-mini:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-mini.btn-remover:hover:not(:disabled) {
+  border-color: #e5484d;
+  color: #e5484d;
+}
+
+.paginas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pagina-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-soft);
+  border: 1px solid var(--linha);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.pagina-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #ffffff;
+}
+
+.pagina-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+  font-family: ui-monospace, monospace;
+}
