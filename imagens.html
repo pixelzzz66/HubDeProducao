@@ -11,9 +11,11 @@
   <header id="app-header"></header>
   <main id="app-main">
     <h1>Imagens</h1>
-    <p>Recorte imagens rapidamente. Tudo acontece no seu navegador — nenhum arquivo é enviado para servidor.</p>
+    <p>Ferramentas rápidas de imagem. Tudo roda no seu navegador — nenhum arquivo é enviado para servidor.</p>
 
-    <div class="ferramenta">
+    <!-- ─── RECORTE (já existente) ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Recortar</h2>
       <div class="ferramenta-controles">
         <label class="btn btn-primary">
           Escolher imagem
@@ -29,11 +31,9 @@
           <button type="button" class="btn btn-ratio" data-ratio="1.7778">16:9</button>
           <button type="button" class="btn btn-ratio" data-ratio="NaN">Livre</button>
         </div>
-
         <div class="cropper-wrap">
           <img id="imagem-preview" alt="Imagem para recortar" />
         </div>
-
         <div class="acoes">
           <button type="button" id="btn-recortar" class="btn btn-primary">Recortar</button>
           <button type="button" id="btn-resetar" class="btn btn-ghost">Recomeçar</button>
@@ -49,9 +49,120 @@
           <button type="button" id="btn-baixar" class="btn btn-primary">Baixar PNG</button>
         </div>
       </div>
+    </section>
 
-      <p class="em-breve">Em breve: redimensionamento e remoção de fundo (rodando no navegador).</p>
-    </div>
+    <!-- ─── REDIMENSIONAR ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Redimensionar</h2>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Escolher imagem
+          <input type="file" id="resize-input" accept="image/*" hidden />
+        </label>
+        <span id="resize-nome" class="arquivo-nome"></span>
+      </div>
+
+      <div id="resize-controles" class="controles-linha" hidden>
+        <label class="campo">
+          Largura (px)
+          <input type="number" id="resize-largura" min="1" />
+        </label>
+        <label class="campo">
+          Altura (px)
+          <input type="number" id="resize-altura" min="1" />
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" id="resize-proporcao" checked />
+          Manter proporção
+        </label>
+        <button type="button" id="resize-executar" class="btn btn-primary">Redimensionar</button>
+      </div>
+
+      <div id="resize-resultado" class="resultado" hidden>
+        <div class="resultado-wrap">
+          <canvas id="resize-canvas"></canvas>
+        </div>
+        <div class="acoes">
+          <button type="button" id="resize-baixar" class="btn btn-primary">Baixar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONVERTER FORMATO / QUALIDADE ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Converter formato & qualidade</h2>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Escolher imagem
+          <input type="file" id="convert-input" accept="image/*" hidden />
+        </label>
+        <span id="convert-nome" class="arquivo-nome"></span>
+      </div>
+
+      <div id="convert-controles" class="controles-linha" hidden>
+        <label class="campo">
+          Formato
+          <select id="convert-formato">
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/png">PNG</option>
+            <option value="image/webp">WebP</option>
+          </select>
+        </label>
+        <label class="campo">
+          Qualidade (0–1)
+          <input type="number" id="convert-qualidade" min="0.1" max="1" step="0.05" value="0.85" />
+        </label>
+        <button type="button" id="convert-executar" class="btn btn-primary">Converter</button>
+      </div>
+
+      <div id="convert-resultado" class="resultado" hidden>
+        <p class="info-arquivo" id="convert-info"></p>
+        <div class="resultado-wrap">
+          <img id="convert-preview" alt="Prévia da conversão" />
+        </div>
+        <div class="acoes">
+          <button type="button" id="convert-baixar" class="btn btn-primary">Baixar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BASE64 ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Imagem → Base64</h2>
+      <p class="ferramenta-desc">Cole o resultado em HTML, Markdown ou código de relatório.</p>
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Escolher imagem
+          <input type="file" id="b64-input" accept="image/*" hidden />
+        </label>
+        <span id="b64-nome" class="arquivo-nome"></span>
+      </div>
+
+      <div id="b64-controles" class="controles-linha" hidden>
+        <label class="campo">
+          Formato
+          <select id="b64-formato">
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/webp">WebP</option>
+          </select>
+        </label>
+        <button type="button" id="b64-gerar" class="btn btn-primary">Gerar Base64</button>
+      </div>
+
+      <div id="b64-resultado" class="resultado" hidden>
+        <textarea id="b64-texto" rows="6" readonly></textarea>
+        <div class="acoes">
+          <button type="button" id="b64-copiar" class="btn btn-primary">Copiar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── EM BREVE ─── -->
+    <section class="ferramenta">
+      <h2 class="ferramenta-titulo">Remover fundo (IA)</h2>
+      <p class="ferramenta-desc em-breve">Em breve. O modelo roda no navegador e é baixado uma única vez (~40 MB). Depois fica em cache.</p>
+    </section>
   </main>
   <footer id="app-footer"></footer>
 
