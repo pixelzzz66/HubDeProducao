@@ -5,14 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imagens — Hub de Produção</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css" />
 </head>
 <body>
   <header id="app-header"></header>
   <main id="app-main">
     <h1>Imagens</h1>
-    <p>Em breve: recorte, redimensionamento e remoção de fundo.</p>
+    <p>Recorte imagens rapidamente. Tudo acontece no seu navegador — nenhum arquivo é enviado para servidor.</p>
+
+    <div class="ferramenta">
+      <div class="ferramenta-controles">
+        <label class="btn btn-primary">
+          Escolher imagem
+          <input type="file" id="imagem-input" accept="image/*" hidden />
+        </label>
+        <span id="arquivo-nome" class="arquivo-nome"></span>
+      </div>
+
+      <div id="cropper-area" class="cropper-area" hidden>
+        <div class="proporcoes">
+          <button type="button" class="btn btn-ratio ativo" data-ratio="1">1:1</button>
+          <button type="button" class="btn btn-ratio" data-ratio="1.3333">4:3</button>
+          <button type="button" class="btn btn-ratio" data-ratio="1.7778">16:9</button>
+          <button type="button" class="btn btn-ratio" data-ratio="NaN">Livre</button>
+        </div>
+
+        <div class="cropper-wrap">
+          <img id="imagem-preview" alt="Imagem para recortar" />
+        </div>
+
+        <div class="acoes">
+          <button type="button" id="btn-recortar" class="btn btn-primary">Recortar</button>
+          <button type="button" id="btn-resetar" class="btn btn-ghost">Recomeçar</button>
+        </div>
+      </div>
+
+      <div id="resultado" class="resultado" hidden>
+        <h2>Prévia</h2>
+        <div class="resultado-wrap">
+          <canvas id="canvas-resultado"></canvas>
+        </div>
+        <div class="acoes">
+          <button type="button" id="btn-baixar" class="btn btn-primary">Baixar PNG</button>
+        </div>
+      </div>
+
+      <p class="em-breve">Em breve: redimensionamento e remoção de fundo (rodando no navegador).</p>
+    </div>
   </main>
   <footer id="app-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
   <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/image-tools.js"></script>
 </body>
 </html>
