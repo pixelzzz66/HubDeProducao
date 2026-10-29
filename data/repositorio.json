@@ -2,14 +2,14 @@
   {
     "categoria": "Logos e Símbolos",
     "itens": [
-      { "nome": "LOGO UNICAMP", "arquivo": "repositorio/UNICAMP.png", "tipo": "imagem" },
+      { "nome": "Logo UNICAMP", "arquivo": "repositorio/UNICAMP.png", "tipo": "imagem" },
       { "nome": "Logo FCA", "arquivo": "repositorio/FCA.png", "tipo": "imagem" }
     ]
   },
   {
     "categoria": "Templates e Capas",
     "itens": [
-      { "nome": "Capa de Relatório (Word)", "arquivo": "repositorio/capa-relatorio.docx", "tipo": "documento" },
+      { "nome": "Capa de Relatório (Word)", "arquivo": "repositorio/capa para relatório.docx", "tipo": "documento" },
       { "nome": "Template de Slides", "arquivo": "repositorio/template-slides.pptx", "tipo": "documento" }
     ]
   }
