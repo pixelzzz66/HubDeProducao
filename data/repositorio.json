@@ -9,7 +9,7 @@
   {
     "categoria": "Templates e Capas",
     "itens": [
-      { "nome": "Capa de Relatório (Word)", "arquivo": "repositorio/capa para relatório.docx", "tipo": "documento" },
+      { "nome": "Capa de Relatório (Word)", "arquivo": "repositorio/Capa para relatório.docx", "tipo": "documento" },
       { "nome": "Template de Slides", "arquivo": "repositorio/template-slides.pptx", "tipo": "documento" }
     ]
   }
