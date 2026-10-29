@@ -1,5 +1,15 @@
 [
   {
+    "categoria": "Inteligência Artificial",
+    "itens": [
+      { "nome": "ChatGPT",    "url": "https://chatgpt.com",           "icone": "🤖", "descricao": "OpenAI" },
+      { "nome": "Gemini",     "url": "https://gemini.google.com",     "icone": "✨", "descricao": "Google" },
+      { "nome": "DeepSeek",   "url": "https://chat.deepseek.com",     "icone": "🐋", "descricao": "DeepSeek" },
+      { "nome": "Claude",     "url": "https://claude.ai",             "icone": "🧠", "descricao": "Anthropic" },
+      { "nome": "NotebookLM", "url": "https://notebooklm.google.com", "icone": "📓", "descricao": "Análise de documentos (Google)" }
+    ]
+  },
+  {
     "categoria": "Google Workspace",
     "itens": [
       { "nome": "Docs",   "url": "https://docs.google.com",   "icone": "📝", "descricao": "Documentos" },
@@ -13,13 +23,14 @@
     "itens": [
       { "nome": "Drive da Veterana", "url": "https://drive.google.com/drive/folders/1x-Ocriz--AIq4j-V9hJvkM8CheqqibD_?hl=pt-br", "icone": "⭐", "descricao": "Provas antigas e materiais" },
       { "nome": "Portal do Aluno",   "url": "https://www.dac.unicamp.br/portal/",  "icone": "🎓", "descricao": "DAC/UNICAMP" },
-      { "nome": "GDE",               "url": "https://grade.daconline.unicamp.br/login/",  "icone": "🧭", "descricao": "Auxiliador de disciplinas" }
+      { "nome": "GDE",               "url": "https://grade.daconline.unicamp.br/",  "icone": "🧭", "descricao": "Auxiliador de disciplinas" }
     ]
   },
   {
     "categoria": "Design",
     "itens": [
-      { "nome": "Canva", "url": "https://canva.com", "icone": "🎨", "descricao": "Design gráfico" }
+      { "nome": "Canva", "url": "https://canva.com", "icone": "🎨", "descricao": "Design gráfico" },
+      { "nome": "Pixlr", "url": "https://pixlr.com", "icone": "🖌️", "descricao": "Editor de fotos e imagens" }
     ]
   }
 ]
