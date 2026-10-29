@@ -2,8 +2,8 @@
   {
     "categoria": "Logos e Símbolos",
     "itens": [
-      { "nome": "Logo UNICAMP", "arquivo": "repositorio/unicamp.png", "tipo": "imagem" },
-      { "nome": "Logo FCA", "arquivo": "repositorio/fca.png", "tipo": "imagem" }
+      { "nome": "LOGO UNICAMP", "arquivo": "repositorio/UNICAMP.png", "tipo": "imagem" },
+      { "nome": "Logo FCA", "arquivo": "repositorio/FCA.png", "tipo": "imagem" }
     ]
   },
   {
